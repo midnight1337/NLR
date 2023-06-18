@@ -85,6 +85,13 @@ you can start using this tool.
 
 ![Thread session](/Pictures/gui_thread_new_session.jpg)
 
+- #### 2.9 Losing connection with remote
+
+  Another cool feature is that, there is a method as thread which checks every second if connection with remote is still alive. If not, there is Windows toast notifier and GUI console output as
+  client has disconnected
+
+![Thread session](/Pictures/sysmodule_reboot.jpg)
+
 ### 3. UML of the tool
 
 Diagram of how all the classes and methods and files connect with each other
