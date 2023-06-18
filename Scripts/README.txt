@@ -1,0 +1,1 @@
+This directory contains all necessary scripts for running logs.
