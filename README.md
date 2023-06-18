@@ -8,9 +8,9 @@ you do this at least few times per day. I was kinda sick of it so I wanted to au
 done with only few clicks.
 
 This tool provides automated:
-- connecting into SSH server
-- connecting into PC connected to that server
-- running particular logs
+- connecting to Virtual Machine via SSH (jumphost name)
+- connecting to physical device (eg. PC) connected to that Virtual Machine (destination hostname)
+- running particular logs on remotes
 - watching real time log data (PID, size, logging time, is that particular PID still alive)
 - stoping and downloading these logs from remote PC intoo SSH server
 - editing database of your's SSH remote servers
@@ -20,7 +20,7 @@ This is a topology of whole steps that tool instructions go through when connect
 
 ![Topology](/Pictures/topology.png)
 
-As you can see first you need to initialise connection with remote server which is jump hostname, to be able to
+As you can see, first you need to initialise connection with remote server which is jump hostname, to be able to
 connect to your target which is physical device connected to that VM with copper cable. After establishing both connections
 you can start using this tool.
 
