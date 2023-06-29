@@ -95,6 +95,7 @@ you can start using this tool.
 ### 3. Threads
 
 Topology below shows how NLR is using threads in given scenarios.
+
 At first when program starts, it runs main thread which is responsible for looping through all SSH and LOGS collection, it just checks if these threads are alive.
 
 Each VM has it's own thread when user is about to establish connection. These threads are responsible for checking connection between user's PC and remote host. If connection is lost, thread is stopped, and so notification is raised by main thread as it knows that this thread is not alive anymore.
