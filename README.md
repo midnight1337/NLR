@@ -92,13 +92,24 @@ you can start using this tool.
 
 ![Thread session](/Pictures/sysmodule_reboot.jpg)
 
-### 3. UML of the tool
+### 3. Threads
+
+Topology below shows how NLR is using threads in given scenarios.
+At first when program starts, it runs main thread which is responsible for looping through all SSH and LOGS collection, it just checks if these threads are alive.
+
+Each VM has it's own thread when user is about to establish connection. These threads are responsible for checking connection between user's PC and remote host. If connection is lost, thread is stopped, and so notification is raised by main thread as it knows that this thread is not alive anymore.
+
+Almost the same thing happens when LOG collection has started, except one thing which makes this tool very useful. Given LOG thread communicates with remote host, and checks LOG size, logging time and assigned PID, which also is being verified if assigned PID is still alive or if it's been killed remotely by someone else logged into VM, or by remote host crash perhaps. All of these informations are passed to GUI so user sees everything.
+
+![Threads](/Pictures/threads.png)
+
+### 4. UML of the tool
 
 Diagram of how all the classes and methods and files connect with each other
 
 ![UML](/Pictures/UML.png)
 
-### 4. How to use it
+### 5. How to use it
 Well, you can run it, but you can't use it. This code was published only for review purpose, official version contains some company confidential data (which obviously I can't publish) stored in hashdata.py, which is necessary for proper use of a tool.
 So unless you're not my co-worker you can't see how does it work.
 Please clone repository with:
